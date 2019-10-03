@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script type="text/javascript" src="simcir.js"></script>
+    <link rel="stylesheet" type="text/css" href="simcir.css" />
+    <script type="text/javascript" src="simcir-basicset.js"></script>
+    <link rel="stylesheet" type="text/css" href="simcir-basicset.css" />
+    <script type="text/javascript" src="simcir-library.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="simcir">
+    <!-- paste here your circuit data -->
+    {
+  "width":800,
+  "height":400,
+  "showToolbox":true,
+  "toolbox":[
+    {"type":"Joint"},
+    {"type":"DC"},
+    {"type":"LED"},
+    {"type":"Toggle"},
+    {"type":"NOT"},
+    {"type":"AND"},
+    {"type":"OR"}
+
+  ],
+  "devices":[
+    {"type":"DC","id":"dev0","x":8,"y":128,"label":"DC"},
+    {"type":"Joint","id":"dev1","x":56,"y":136,"label":"Joint","state":{"direction":0}},
+    {"type":"Toggle","id":"dev2","x":120,"y":96,"label":"A","state":{"on":false}},
+    {"type":"Joint","id":"dev3","x":72,"y":160,"label":"Joint","state":{"direction":0}},
+    {"type":"Joint","id":"dev4","x":72,"y":104,"label":"Joint","state":{"direction":0}},
+    {"type":"Toggle","id":"dev5","x":120,"y":152,"label":"B","state":{"on":false}},
+    {"type":"LED","id":"dev6","x":416,"y":128,"label":"LED"}
+  ],
+  "connectors":[
+    {"from":"dev1.in0","to":"dev0.out0"},
+    {"from":"dev2.in0","to":"dev4.out0"},
+    {"from":"dev3.in0","to":"dev1.out0"},
+    {"from":"dev4.in0","to":"dev1.out0"},
+    {"from":"dev5.in0","to":"dev3.out0"}
+  ]
+}
+    </div>
+  </body>
+</html>
