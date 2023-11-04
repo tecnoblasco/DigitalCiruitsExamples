@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script type="text/javascript" src="simcir.js"></script>
+    <link rel="stylesheet" type="text/css" href="simcir.css" />
+    <script type="text/javascript" src="simcir-basicset.js"></script>
+    <link rel="stylesheet" type="text/css" href="simcir-basicset.css" />
+    <script type="text/javascript" src="simcir-library.js"></script>
+    <script type="text/javascript" src="simcir-num.js"></script>
+    
+    <title></title>
+  </head>
+  <body>
+    <div class="simcir">
+    <!-- paste here your circuit data -->
+    {
+      "width":800,
+      "height":400,
+      "showToolbox":true,
+      "toolbox":[
+        {"type":"Joint"},
+        {"type":"DC"},
+        {"type":"Toggle"},
+        {"type":"OSC"}
+      ],
+      "devices":[
+        {"type":"NumSrc","id":"dev0","x":8,"y":80,"label":"NumSrc","display": "on","state":{"direction":0,"on":false}},
+        {"type":"JK-FF","id":"dev1","x":144,"y":80,"label":"JK"},
+        {"type":"Joint","id":"dev2","x":104,"y":184,"label":"Joint","state":{"direction":0}},
+        {"type":"Joint","id":"dev3","x":200,"y":184,"label":"Joint","state":{"direction":0}},
+        {"type":"Joint","id":"dev4","x":312,"y":184,"label":"Joint","state":{"direction":0}},
+        {"type":"JK-FF","id":"dev5","x":248,"y":80,"label":"JK"},
+        {"type":"JK-FF","id":"dev6","x":344,"y":80,"label":"JK"},
+        {"type":"JK-FF","id":"dev7","x":448,"y":80,"label":"JK"},
+        {"type":"NumDsp","id":"dev8","x":200,"y":40,"label":"NumDsp","state":{"direction":1}},
+        {"type":"NumDsp","id":"dev9","x":304,"y":40,"label":"NumDsp","state":{"direction":1}},
+        {"type":"NumDsp","id":"dev10","x":400,"y":40,"label":"NumDsp","state":{"direction":1}},
+        {"type":"NumDsp","id":"dev11","x":504,"y":40,"label":"NumDsp","state":{"direction":1}},
+        {"type":"Joint","id":"dev12","x":400,"y":184,"label":"Joint","state":{"direction":0}},
+        {"type":"JK-FF","id":"dev13","x":560,"y":80,"label":"JK"},
+        {"type":"Joint","id":"dev14","x":480,"y":184,"label":"Joint","state":{"direction":0}},
+        {"type":"NumDsp","id":"dev15","x":656,"y":88,"label":"numero","state":{"direction":2}},
+        {"type":"NOT","id":"dev16","x":56,"y":104,"label":"NOT"},
+        {"type":"OSC","id":"dev17","x":40,"y":176,"label":"CLK", "freq": 0.5}
+      ],
+      "connectors":[
+        {"from":"dev1.in0","to":"dev0.out0"},
+        {"from":"dev1.in1","to":"dev2.out0"},
+        {"from":"dev1.in2","to":"dev16.out0"},
+        {"from":"dev2.in0","to":"dev17.out0"},
+        {"from":"dev3.in0","to":"dev2.out0"},
+        {"from":"dev4.in0","to":"dev3.out0"},
+        {"from":"dev5.in0","to":"dev1.out0"},
+        {"from":"dev5.in1","to":"dev3.out0"},
+        {"from":"dev5.in2","to":"dev1.out1"},
+        {"from":"dev6.in0","to":"dev5.out0"},
+        {"from":"dev6.in1","to":"dev4.out0"},
+        {"from":"dev6.in2","to":"dev5.out1"},
+        {"from":"dev7.in0","to":"dev6.out0"},
+        {"from":"dev7.in1","to":"dev12.out0"},
+        {"from":"dev7.in2","to":"dev6.out1"},
+        {"from":"dev8.in0","to":"dev1.out0"},
+        {"from":"dev9.in0","to":"dev5.out0"},
+        {"from":"dev10.in0","to":"dev6.out0"},
+        {"from":"dev11.in0","to":"dev7.out0"},
+        {"from":"dev12.in0","to":"dev4.out0"},
+        {"from":"dev13.in0","to":"dev7.out0"},
+        {"from":"dev13.in1","to":"dev14.out0"},
+        {"from":"dev13.in2","to":"dev7.out1"},
+        {"from":"dev14.in0","to":"dev12.out0"},
+        {"from":"dev15.in0","to":"dev13.out0"},
+        {"from":"dev16.in0","to":"dev0.out0"}
+      ]
+    }
+    </div>
+  </body>
+</html>
